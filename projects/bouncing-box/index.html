@@ -45,18 +45,34 @@
 			boardWidth = $('.board').width();
 
 			// TODO 2
-
+			var position;
+			var points;
+			var speed;
+			
+			position = 0;
+			points = 0;
+			speed = 10;
+			
+			box.css('left', position);      // changes the 'left' css property of the box to value of var position
+			box.text(points);               // changes the text of the box to display the value of var points
 			
 			var update = function() {
 				// TODO 3 / 6 / 7 / 8
-				
+			position = position + speed;
+			box.text(points);
+			if(position > boardWidth) {
+    		position = 0;
+			}
+			box.css('left', position);
 			};
 
 
 			
 			var handleBoxClick = function() {
 				// TODO 4 / 5
-				
+			speed = speed + 3;
+			position = 0;
+			points = points + 1;
 			};
 
 
